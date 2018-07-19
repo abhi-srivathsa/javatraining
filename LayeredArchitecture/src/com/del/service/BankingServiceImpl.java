@@ -33,4 +33,10 @@ public class BankingServiceImpl implements BankingService {
 		
 	}
 
+	@Override
+	public boolean authenticate(String user, String password) {
+		// TODO Auto-generated method stub
+	return bDao.authenticate(user,password);
+	}
+
 }

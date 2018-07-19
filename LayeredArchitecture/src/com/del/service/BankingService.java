@@ -10,4 +10,6 @@ public interface BankingService {
 
 	double withdrawAmount(double amount1) throws BankingException;
 
+	boolean authenticate(String user, String password);
+
 }

@@ -10,4 +10,6 @@ public interface BankingDao {
 
 	double withdrawAmount(double amount) throws BankingException;
 
+	boolean authenticate(String user, String password);
+
 }

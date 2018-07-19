@@ -12,8 +12,14 @@ public class BankingClient {
 
 	public BankingClient() {
 		bService = new BankingServiceImpl();
-		int choice = 0;
 		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter username : ");
+		String user = scan.nextLine();
+		System.out.println("Enter password : ");
+		String password = scan.nextLine();
+		boolean auth = bService.authenticate(user,password);
+		if(auth) {
+		int choice = 0;
 		while (true) {
 			try {
 				choice = getChoice(scan);
@@ -23,18 +29,18 @@ public class BankingClient {
 			}
 			switch (choice) {
 			case 1:
-				double amount =0.0;
+				double amount = 0.0;
 				System.out.println("DEPOSIT AMOUNT");
 				System.out.println("Enter the amount ot be deposited");
 				try {
-					  amount = scan.nextDouble();
+					amount = scan.nextDouble();
 					bService.depositAmount(amount);
 				} catch (BankingException e) {
 					System.out.println(e.getMessage());
-				}catch (InputMismatchException e) {
+				} catch (InputMismatchException e) {
 					// TODO: handle exception
 					System.err.println("Enter number only");
-					 scan.nextLine();
+					scan.nextLine();
 				}
 
 				break;
@@ -42,14 +48,14 @@ public class BankingClient {
 				System.out.println("WITHDRAW AMOUNT");
 				System.out.println("Enter the amount to be withdrawn");
 				double amountWithdrawn = 0.0;
-				double amount1=0.0;
+				double amount1 = 0.0;
 				try {
-					 amount1 = scan.nextDouble();
+					amount1 = scan.nextDouble();
 					amountWithdrawn = bService.withdrawAmount(amount1);
 				} catch (BankingException e) {
 					// TODO Auto-generated catch block
 					System.out.println(e.getMessage());
-				}catch (InputMismatchException e) {
+				} catch (InputMismatchException e) {
 					// TODO: handle exception
 					System.err.println("Enter number only");
 					scan.nextLine();
@@ -70,6 +76,10 @@ public class BankingClient {
 				System.out.println("Enter the correct choice");
 				break;
 			}
+		}
+		}
+		else {
+			System.out.println("Invalid Username or password! ");
 		}
 	}
 
