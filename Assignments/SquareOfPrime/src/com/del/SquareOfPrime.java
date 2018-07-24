@@ -5,15 +5,17 @@ public class SquareOfPrime {
 	public static void main(String[] args) {
 		int i=1,square = 0;
 		while(square < 900) {
-			if(isPrime(i++)) {
+			if(isPrime(i)) {
 				square = i*i;
 				System.out.println("The square of "+i+" is "+ i*i );
 			}
+			i++;
 		}
 
 	}
 	private static boolean isPrime(int num) {
 		int count = 0;
+	//	System.out.println(num);
 		if (num == 0 || num == 1)
 			return false;
 		else {

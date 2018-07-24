@@ -2,6 +2,7 @@ package com.del;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,8 +19,16 @@ public class EmpListTest {
 		System.out.println("enter the type of sort : \n 1.id \n 2.name \n3.mobile");
 		Scanner scan = new Scanner(System.in);
 		int option = scan.nextInt();
-		Collections.sort(EmployeeList, new EmpComparator(SortingField.Id )); 
-		System.out.println(EmployeeList); 
+		// switch case to be added
+		// Collections.sort(EmployeeList, new EmpComparator(SortingField.Id ));
+//		Collections.sort(EmployeeList, new Comparator<Emp>() {
+//			@Override
+//			public int compare(Emp e1, Emp e2) {
+//				return e1.getId() - e2.getId();
+//			}
+//		});
+		Collections.sort(EmployeeList, (e1,e2)->e1.getId()-e2.getId());
+		System.out.println(EmployeeList);
 	}
 
 }
