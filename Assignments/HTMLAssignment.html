@@ -1,0 +1,23 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Form assignment</title>
+	</head>
+	<body>
+		<h1>Registration Form</h1>
+		<form >
+			<table border="1" style=" border-collapse: collapse;">
+				<tr><td >ID</td><td colspan="2"><input type="text" name="Text field" placeholder="Enter ID" pattern="[A-Z][a-z]{6}"></td></tr>
+				<tr><td >Name</td><td colspan="2"><input type="text" name="Text field" placeholder="Enter Name" pattern="[A-Z][a-z]*"></td></tr>
+				<tr><td>Age</td><td><input type="number"name="age" min="18" max="40"></td></tr>
+				<tr><td>Gender</td><td><input type="radio" name="gender" value="male"> Male <input type="radio" name="gender" value="female"> Female</td></tr>
+				<tr><td>Mobile</td><td><input type="text" name="Mobile" pattern="[7,8,9][0-9]{9}"></td></tr>
+				<tr><td>Location</td><td><select size="3" multiple><option value = "Mumbai"> Mumbai</option><option value = "Pune"> Pune</option><option value = "Hyderbad"> Hyderbad</option>
+					<option value = "Bangalore"> Bangalore</option>
+					<option value = "Noida"> Noida</option></td></select></tr>
+					<tr><td colspan="2"><center><input type="submit" name="submit" value="submit"></center>
+					</td></tr>
+				</table>
+			</form>
+		</body>
+		</html>
