@@ -1,0 +1,4 @@
+setData,TRUE,void,number,253
+printData,TRUE,void,null,null
+display,TRUE,void ,string ,hello
+squareData,TRUE,integer,null,null
